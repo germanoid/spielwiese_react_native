@@ -1,9 +1,11 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
-import styles from "./styles";
+import getStyleSheet from "./styles";
 
 
 export default function Details({ navigation }) {
+  const styles = getStyleSheet(false);
+
   return (
     <View style={styles.container}>
       <Text>{navigation.getParam("title")}</Text>

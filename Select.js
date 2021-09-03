@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import {View, Text} from "react-native";
-import styles from "./styles";
+import getStyleSheet from "./styles";
 import Select from "./components/Select";
 
 export default function SelectingOptions() {
+  const styles = getStyleSheet(false);
+  
   const [sizes, setSizes] = useState([
     {label: "", value: null},
     {label: "S", value: "S"},

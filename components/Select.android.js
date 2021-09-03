@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {View, Picker, Text} from "react-native";
-import styles from "./../styles";
+import getStyleSheet from "./../styles";
 
 export default function Select(props) {
+  const styles = getStyleSheet(false);
+  
   return (
     <View>
       <Text style={styles.pickerLabel}>{props.label}</Text>

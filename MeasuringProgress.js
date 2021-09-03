@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { View } from "react-native";
-import styles from "./styles";
+import getStyleSheet from "./styles";
 import ProgressBar from "./components/ProgressBar";
 
 export default function MeasuringProgress() {
+  const styles = getStyleSheet(false);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {

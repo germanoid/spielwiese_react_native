@@ -1,34 +1,23 @@
 import {StatusBar} from "expo-status-bar";
-import React from "react";
-import {StyleSheet, Text, View, Button} from "react-native";
+import React, { useState } from "react";
+import {StyleSheet, Text, View, ScrollView, Button} from "react-native";
 import Box from "./components/Box";
-import styles from "./styles";
+import getStyleSheet from "./styles";
+
 
 export default function Home({navigation}) {
+
+  const [darkTheme, setDarkTheme] = useState(true);
+  const styles = getStyleSheet(darkTheme);
+
+  const bg = StyleSheet.flatten(styles.container).backgroundColor;
+
   return (
     <View style={styles.container}>
       <Box>
         <Button
-          title="First Item"
-          onPress={() =>
-            navigation.navigate("Details", {
-              title: "First Item",
-              content: "First Item Content",
-              stock: 1
-            })
-          }
-        />
-      </Box>
-      <Box>
-        <Button
-          title="Second Item"
-          onPress={() =>
-            navigation.navigate("Details", {
-              title: "Second Item",
-              content: "Second Item Content",
-              stock: 0
-            })
-          }
+          title={"Darkmode: " + darkTheme}
+          onPress={() => setDarkTheme(!darkTheme)}
         />
       </Box>
       <Box>
@@ -81,3 +70,29 @@ Home.navigationOptions = ({ navigation }) => ({
     />
   )
 });
+
+
+//      <Box>
+//        <Button
+//          title="First Item"
+//          onPress={() =>
+//            navigation.navigate("Details", {
+//              title: "First Item",
+//              content: "First Item Content",
+//              stock: 1
+//            })
+//          }
+//        />
+//      </Box>
+//      <Box>
+//        <Button
+//          title="Second Item"
+//          onPress={() =>
+//            navigation.navigate("Details", {
+//              title: "Second Item",
+//              content: "Second Item Content",
+//              stock: 0
+//            })
+//          }
+//        />
+//      </Box>

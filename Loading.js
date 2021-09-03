@@ -1,8 +1,10 @@
 import React from "react";
 import {View, ActivityIndicator, Text} from "react-native";
-import styles from "./styles";
+import getStyleSheet from "./styles";
 
 export default function Loading() {
+  const styles = getStyleSheet(false);
+  
   return (
     <View style={styles.container}>
       <Text>...Loading...</Text>

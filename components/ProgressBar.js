@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { View, Text } from "react-native";
-import styles from "./../styles";
+import getStyleSheet from "./../styles";
 import { ProgressBarComponent, progressProps } from "./ProgressBarComponent";
 
 function ProgressLabel({ show, progress }) {
@@ -13,6 +13,8 @@ function ProgressLabel({ show, progress }) {
 }
 
 export default function ProgressBar({ progress, label }) {
+  const styles = getStyleSheet(false);
+  
   return (
     <View style={styles.progress}>
       <ProgressLabel show={label} progress={progress} />

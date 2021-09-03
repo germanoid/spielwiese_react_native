@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {Text, FlatList} from "react-native";
-import styles from "./styles";
+import getStyleSheet from "./styles";
 import ListControls from "./ListControls";
 
 export default function List({Controls, data, onFilter, onSort, asc}) {
+  const styles = getStyleSheet(false);
+
   return (
     <FlatList
       data={data}
